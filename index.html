@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Krish Haldankar — Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg1:#0b0f19;
+  --bg2:#111526;
+  --accent:#d4a85a; 
+  --accent2:#a06b35;
+  --muted:#9fb3c8;
+  --card:#151b2d;
+  --radius:14px;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  font-family:Inter, sans-serif;
+  color:#e7f2ff;
+}
+
+/* HEADER */
+header {
+  display:flex; 
+  justify-content:space-between; 
+  padding:20px 30px; 
+  position:fixed;
+  top:0; left:0; right:0;
+  background:rgba(0,0,0,0.25);
+  backdrop-filter:blur(6px);
+  z-index:99;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo {
+  font-family:Merriweather, serif;
+  font-size:22px;
+  font-weight:800;
+  color:var(--accent);
+  letter-spacing:1px;
+}
+
+nav a {
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+}
+nav a:hover { color:#fff; }
+
+/* LAYOUT */
+main {
+  padding:140px 30px 60px;
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:40px;
+}
+
+.card {
+  background:var(--card);
+  padding:24px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 0 25px rgba(0,0,0,0.35);
+}
+
+/* LEFT PROFILE */
+.mark svg { width:80px; height:80px; }
+
+.name { font-size:20px; font-weight:800; }
+.role { color:var(--muted); margin-top:6px; }
+.meta { color:var(--muted); margin-top:6px; font-size:14px; }
+
+.chip {
+  display:inline-block;
+  padding:6px 12px;
+  margin:4px 4px 0 0;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--muted);
+  font-size:14px;
+}
+
+.btn {
+  margin-right:10px;
+  margin-top:12px;
+  padding:10px 14px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn.primary {
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* RIGHT SIDE */
+h1 { margin:0; font-size:28px; }
+.sub { color:var(--muted); margin-top:8px; font-size:15px; }
+.intro { margin-top:14px; color:#cbd9eb; line-height:1.6; }
+
+/* PROJECTS */
+.projects {
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.proj {
+  padding:14px;
+  background:rgba(255,255,255,0.02);
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+footer {
+  margin-top:30px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  padding-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">KRISH HALDANKAR</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- LEFT PROFILE -->
+  <aside class="card">
+    <div class="mark">
+      <svg viewBox="0 0 120 120">
+        <defs>
+          <linearGradient id="gold" x1="0" x2="1">
+            <stop offset="0" stop-color="#d4a85a"/>
+            <stop offset="1" stop-color="#a06b35"/>
+          </linearGradient>
+        </defs>
+        <rect width="120" height="120" rx="14" fill="#1a1f2c"/>
+        <text x="60" y="74" text-anchor="middle"
+              font-family="Merriweather, serif"
+              font-size="48"
+              font-weight="700"
+              fill="url(#gold)">
+          KH
+        </text>
+      </svg>
+    </div>
+
+    <div class="name">Krish Haldankar</div>
+    <div class="role">Computer Engineering Diploma Student</div>
+    <div class="meta">Mumbai • 20 years old</div>
+
+    <div>
+      <div class="chip">Computer Repair</div>
+      <div class="chip">Web Dev Basics</div>
+      <div class="chip">AI Fundamentals</div>
+    </div>
+
+    <button class="btn primary">Download CV</button>
+    <button class="btn" onclick="location='#contact'">Contact</button>
+
+    <div style="margin-top:16px; color:var(--muted); font-size:14px;">
+      <strong>Experience</strong><br>
+      • 1 year at a computer repair shop (diagnostics, OS installs, hardware fixes).<br><br>
+
+      <strong>Learning</strong><br>
+      • Diploma in Computer Engineering (programming, networking, OS).<br>
+      • Hands-on learning of AI and automation tools.
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <section id="about" class="card">
+    <h1>Hi — I'm Krish. I build practical tech solutions while I learn.</h1>
+    <div class="sub">Student • Technician • Learner</div>
+
+    <p class="intro">
+      I'm a 20-year-old student based in Mumbai, currently pursuing a Diploma in Computer Engineering.
+      I have real-world repair experience from a year in a computer shop and I'm learning programming,
+      web development, and AI fundamentals. I like solving real problems—fixing systems, creating useful
+      tools, and building simple interfaces.
+    </p>
+
+    <h2 style="margin-top:30px; font-size:20px;">Skills</h2>
+
+    <div class="chip">Hardware Repair</div>
+    <div class="chip">HTML & CSS</div>
+    <div class="chip">JavaScript Basics</div>
+    <div class="chip">Python Basics</div>
+    <div class="chip">AI / ML Fundamentals</div>
+
+    <h2 id="projects" style="margin-top:30px; font-size:20px;">Projects</h2>
+
+    <div class="projects">
+      <div class="proj">
+        <strong>Repair Shop Tools</strong><br>
+        <small>Created simple utilities for diagnostics and system setup.</small>
+      </div>
+
+      <div class="proj">
+        <strong>Personal Web Pages</strong><br>
+        <small>Built practice websites using HTML, CSS, and JavaScript.</small>
+      </div>
+
+      <div class="proj">
+        <strong>AI Learning Docs</strong><br>
+        <small>Experiments in prompts, small datasets, and automation.</small>
+      </div>
+
+      <div class="proj">
+        <strong>System Automation</strong><br>
+        <small>Scripts to automate installations and cleanup tasks.</small>
+      </div>
+    </div>
+
+    <footer id="contact">
+      Contact: <a href="mailto:krishhaldankar3@gmail.com" style="color:var(--accent)">krishhaldankar3@gmail.com</a>
+    </footer>
+  </section>
+
+</main>
+
+</body>
+</html>
