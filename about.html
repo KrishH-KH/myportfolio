@@ -232,134 +232,74 @@
     text-align:center;
   }
 
-  /* responsive */
-@media (max-width:980px){
-  .container{
-    grid-template-columns:1fr;
-    padding:16px;
-  }
-  .lead{
-    max-width:100%;
-  }
-  .project-grid{
-    grid-template-columns:1fr;
-  }
+  /* ===== MOBILE-ONLY TWEAKS (about header looks like projects header) ===== */
+  @media (max-width:920px){
 
-  /* hide text next to logo on smaller screens */
-  .brand-name{
-    display:none;
-  }
-}
+    /* header bar: same feeling as projects page */
+    header{
+      padding:8px 14px;
+      height:56px;
+    }
 
-/* =========================
-   Mobile tweaks (phones)
-   ========================= */
-@media (max-width:768px){
+    /* smaller logo */
+    .brand img{
+      width:30px;
+      height:30px;
+      border-radius:6px;
+    }
 
-  /* Make base text a bit smaller */
-  html,
-  body {
-    font-size: 14px;
-  }
+    /* hide "KRISH HALDANKAR" text on mobile – only icon + menu */
+    .brand .name{
+      display:none;
+    }
 
-  /* Header / navbar (same pattern for all pages using .site-header) */
-  .site-header {
-    height: auto;
-  }
+    /* nav a bit tighter like projects page */
+    nav{
+      gap:18px;
+    }
 
-  .header-inner {
-    padding: 10px 16px;
-    flex-direction: column;   /* stack brand and nav like in your projects page */
-    align-items: flex-start;
-    gap: 6px;
-  }
+    nav a{
+      font-size:15px;
+      padding:6px 4px;
+    }
 
-  .brand-logo {
-    width: 32px;
-    height: 32px;
-  }
+    /* content: one column and slightly smaller paddings / fonts */
+    .wrap{
+      grid-template-columns:1fr;
+      gap:18px;
+      margin:86px auto 60px;
+      padding:0 14px;
+    }
 
-  /* brand-name is already hidden at 980px above;
-     if you ever want it smaller instead of hidden, remove the display:none and
-     keep this font-size: */
-  .brand-name {
-    font-size: 1rem;
-  }
+    .card{
+      padding:22px 18px;
+    }
 
-  .nav {
-    width: 100%;
-    justify-content: space-between;
-    gap: 16px;
-    font-size: 0.9rem;
-  }
+    .panel{
+      padding:22px 18px 26px;
+    }
 
-  .nav a {
-    padding: 2px 0;
-  }
+    .panel h1{
+      font-size:24px;
+    }
 
-  /* Main layout: cards go in a single column */
-  .site {
-    padding-top: 90px;   /* make sure content starts under header */
-  }
+    .lead,
+    .list,
+    .note{
+      font-size:14px;
+    }
 
-  .container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    padding: 0 16px 32px;
-  }
+    .profile-logo{
+      width:80px;
+      height:80px;
+    }
 
-  .card {
-    width: 100%;
-    margin: 0;
+    .profile-name{
+      font-size:18px;
+    }
   }
-
-  /* Profile card centering */
-  .profile-card {
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-card .badge-row,
-  .profile-card .tag-row {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* Headings & big text a bit smaller */
-  h1 {
-    font-size: 1.7rem;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-
-  .lead,
-  .muted {
-    font-size: 0.95rem;
-  }
-
-  /* Skills / bars section spacing */
-  .skills,
-  .hero-centered {
-    margin-top: 16px;
-  }
-
-  /* Contact form inputs full-width */
-  .form label input,
-  .form label textarea {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    font-size: 0.95rem;
-    padding: 10px 18px;
-  }
-}
 </style>
+
 
 </head>
 <body>
