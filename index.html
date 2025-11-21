@@ -1,207 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Krish Haldankar — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg1:#0b0f19;
-    --bg2:#111526;
-    --accent:#d4a85a;
-    --accent2:#a06b35;
-    --muted:#9fb3c8;
-    --card:#151b2d;
-    --radius:14px;
-    --max-width:1100px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-    color:#e7f2ff;
-    background:linear-gradient(180deg,var(--bg1),var(--bg2));
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
-
-  /* HEADER */
-  header{
-    position:fixed; inset:0 0 auto 0; height:72px;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:0 20px; z-index:40;
-    background:linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.12));
-    border-bottom:1px solid rgba(255,255,255,0.04);
-    backdrop-filter: blur(6px);
-  }
-  .logo{font-family:Merriweather,serif; color:var(--accent); font-weight:700; letter-spacing:1px; font-size:20px}
-  nav{display:flex; gap:18px; align-items:center}
-  nav a{color:var(--muted); text-decoration:none; font-weight:600}
-  nav a:hover{color:#fff}
-
-  /* PAGE LAYOUT */
-  main{padding:110px 18px 60px; display:flex; justify-content:center}
-  .wrap{width:100%; max-width:var(--max-width); display:grid; grid-template-columns:360px 1fr; gap:36px}
-
-  /* CARDS */
-  .card{background:var(--card); border-radius:var(--radius); padding:22px; border:1px solid rgba(255,255,255,0.04); box-shadow:0 8px 30px rgba(2,8,20,0.6)}
-  .left .mark svg{width:72px; height:72px; display:block}
-
-  /* LEFT */
-  .name{font-size:18px; font-weight:800; color:#fff}
-  .role{color:var(--muted); margin-top:6px}
-  .meta{color:var(--muted); margin-top:6px; font-size:13px}
-  .chips{margin-top:12px}
-  .chip{display:inline-block;padding:6px 10px;margin:6px 6px 0 0;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-size:13px}
-  .cta{margin-top:14px; display:flex; gap:10px}
-  .btn{padding:10px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff;font-weight:700;cursor:pointer}
-  .btn.primary{border-color:var(--accent); color:var(--accent)}
-
-  .meta-block{margin-top:14px;color:var(--muted); font-size:14px; line-height:1.5}
-
-  /* RIGHT */
-  h1{margin:0;font-size:28px;line-height:1.05;color:#fff}
-  .sub{color:var(--muted); margin-top:8px; font-size:15px}
-  .intro{margin-top:14px;color:#cbd9eb;line-height:1.6}
-  .skills{margin-top:20px}
-  .skill{display:flex;align-items:center;gap:12px;margin:12px 0}
-  .skill-name{width:160px;color:var(--muted);font-size:14px}
-  .bar{height:10px;border-radius:999px;background:rgba(255,255,255,0.04);overflow:hidden;flex:1}
-  .bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width 900ms cubic-bezier(.2,.9,.2,1)}
-
-  .projects{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .proj{padding:14px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-
-  footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:left}
-
-  /* RESPONSIVE: Make it mobile-friendly */
-  @media (max-width:980px){
-    :root{--max-width:900px}
-    .wrap{grid-template-columns:1fr; gap:18px}
-    .skill-name{width:120px}
-    h1{font-size:24px}
-    .name{font-size:17px}
-  }
-  @media (max-width:520px){
-    header{padding:0 12px}
-    .logo{font-size:17px}
-    nav{gap:12px}
-    .intro{font-size:15px}
-    .chip{font-size:12px;padding:5px 8px}
-    .skill-name{width:110px;font-size:13px}
-    .projects{grid-template-columns:1fr;gap:12px}
-    h1{font-size:20px}
-    .card{padding:16px}
-    .btn{padding:8px 10px;font-size:14px}
-  }
-
-  /* small decorative: gentle hover on project */
-  .proj:hover{transform:translateY(-4px);transition:transform .18s ease; box-shadow:0 8px 22px rgba(0,0,0,0.45)}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="logo">KRISH HALDANKAR</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="wrap">
-
-    <!-- LEFT -->
-    <aside class="card left">
-      <div style="display:flex;gap:12px;align-items:center">
-        <div class="mark" aria-hidden="true">
-          <!-- inline logo -->
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#d4a85a"/><stop offset="1" stop-color="#a06b35"/></linearGradient></defs>
-            <rect width="120" height="120" rx="14" fill="#1a1f2c"/>
-            <text x="60" y="74" text-anchor="middle" font-family="Merriweather,serif" font-size="48" font-weight="700" fill="url(#gold)" style="letter-spacing:2px">KH</text>
-          </svg>
-        </div>
-        <div>
-          <div class="name">Krish Haldankar</div>
-          <div class="role">Computer Engineering — Diploma Student</div>
-          <div class="meta">Mumbai • 20 years old</div>
-        </div>
-      </div>
-
-      <div class="chips">
-        <div class="chip">Computer Service</div>
-        <div class="chip">Web Dev</div>
-        <div class="chip">AI / ML</div>
-      </div>
-
-      <div class="cta">
-        <button class="btn primary" onclick="downloadResume()">Download CV</button>
-        <button class="btn" onclick="scrollTo('#contact')">Contact</button>
-      </div>
-
-      <div class="meta-block">
-        <strong>Experience</strong><br>
-        • 1 year at a computer service centre — diagnostics, OS installs, hardware repairs, and customer support.<br><br>
-
-        <strong>Learning</strong><br>
-        • Diploma in Computer Engineering — programs, networking, operating systems.<br>
-        • Ongoing hands-on learning in AI systems, model use and prompt engineering.
-      </div>
-    </aside>
-
-    <!-- RIGHT -->
-    <section id="about" class="card right">
-      <h1>Hi — I'm Krish. I build practical tech solutions while I learn.</h1>
-      <div class="sub">Student • Technician • Developer</div>
-
-      <p class="intro">
-        I'm a 20-year-old diploma student in Mumbai. I have hands-on hardware experience from working at
-        a computer service centre and increasingly strong software skills — comfortable building web pages,
-        writing scripts, and working with AI tools and pipelines. I focus on practical solutions that get work done.
-      </p>
-
-      <div class="skills">
-        <h3 style="margin:12px 0 8px 0">Skills</h3>
-
-        <div class="skill"><div class="skill-name">Hardware repair</div><div class="bar"><i data-w="95%"></i></div></div>
-        <div class="skill"><div class="skill-name">HTML &amp; CSS</div><div class="bar"><i data-w="85%"></i></div></div>
-        <div class="skill"><div class="skill-name">JavaScript</div><div class="bar"><i data-w="78%"></i></div></div>
-        <div class="skill"><div class="skill-name">Python</div><div class="bar"><i data-w="72%"></i></div></div>
-        <div class="skill"><div class="skill-name">AI / ML</div><div class="bar"><i data-w="88%"></i></div></div>
-      </div>
-
-      <h3 style="margin-top:22px">Projects</h3>
-      <div id="projects" class="projects">
-        <div class="proj"><strong>Repair Service Tools</strong><div style="font-size:13px;color:var(--muted);margin-top:6px">Utilities and scripts to speed diagnostics and setup tasks at the service centre.</div></div>
-        <div class="proj"><strong>Personal Web Pages</strong><div style="font-size:13px;color:var(--muted);margin-top:6px">Practice sites built with HTML, CSS and JavaScript.</div></div>
-        <div class="proj"><strong>AI Experiments</strong><div style="font-size:13px;color:var(--muted);margin-top:6px">Prompt engineering and small automation projects using models and APIs.</div></div>
-        <div class="proj"><strong>Automation Scripts</strong><div style="font-size:13px;color:var(--muted);margin-top:6px">Scripts to automate installs, maintenance and cleanup.</div></div>
-      </div>
-
-      <footer id="contact">
-        Contact: <a href="mailto:krishhaldankar3@gmail.com" style="color:var(--accent)"><strong>krishhaldankar3@gmail.com</strong></a>
-      </footer>
-    </section>
-
-  </div> <!-- /wrap -->
-</main>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Krish Haldankar — Home</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2B9BL8R06K"></script>
 <script>
-  // animate skill bars on load
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.bar > i').forEach((el, i) => {
-      const w = el.getAttribute('data-w') || '60%';
-      setTimeout(() => { el.style.width = w; }, 200 + i*120);
-    });
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  function scrollTo(sel){ const el=document.querySelector(sel); if(el) el.scrollIntoView({behavior:'smooth'}) }
-  function downloadResume(){ alert('Resume download placeholder — replace with your file link or PDF.'); }
+  gtag('config', 'G-2B9BL8R06K');
 </script>
 
+  <!-- load main stylesheet (keeps your existing theme) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- small page-specific CSS tweaks so the hero is centered and card is tidy -->
+  <style>
+    /* ensures main hero text is centered on large area */
+    .hero-centered { text-align: center; margin: 36px 0 14px; }
+    /* make request button gold and prominent */
+    .btn-request {
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:10px;
+      background: linear-gradient(90deg,#cfa149,#f2cc7b);
+      color:#071018;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(207,161,77,0.12);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    /* hide the small quick-links container if any leftover */
+    .quick-links { display:none; }
+    /* compact profile card (remove experience area from home) */
+    .profile-card .profile-extra { display:none; }
+    /* ensure profile card content is vertical and compact */
+    .profile-card { padding:28px; }
+  </style>
+</head>
+<body>
+  <!-- astronomy background canvas / script (keeps your custom animation) -->
+  <div id="astro-bg" aria-hidden="true">
+    <canvas id="astro-canvas"></canvas>
+  </div>
+  <script src="astro.js" defer></script>
+
+  <!-- header -->
+  <header class="site-header">
+  <div class="header-inner" style="
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 28px;
+      position:relative;
+      z-index:10;
+    ">
+    
+    <div class="brand" style="display:flex; align-items:center; gap:10px;">
+      <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <img src="assets/logo.png" alt="KH Logo" 
+             style="height:40px; width:40px; border-radius:8px; object-fit:cover;">
+        <span style="color:#d4a650; font-size:20px; font-weight:700;">
+          KRISH HALDANKAR
+        </span>
+      </a>
+    </div>
+
+    <nav class="nav" style="display:flex; gap:30px;">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+  <main class="site">
+    <div class="container">
+
+      <!-- left: profile card (compact: name + tags + request button only) -->
+      <aside class="card profile-card" role="complementary" aria-label="Profile">
+        <div style="display:flex;justify-content:center;margin-bottom:14px">
+          <img class="logo-large" src="assets/logo.png" alt="KH logo" style="width:96px;height:96px;border-radius:14px;">
+        </div>
+
+        <h2 style="text-align:center;margin:0 0 6px">Krish Haldankar</h2>
+
+<p style="text-align:center;margin:0 0 12px;color:var(--muted);">
+  Computer Engineering — Diploma Student <br>
+  Mumbai, India
+</p>
+
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px">
+          <span class="tag">Computer Service</span>
+          <span class="tag">Web Dev</span>
+          <span class="tag">AI / ML</span>
+        </div>
+
+        <!-- Request CV button (gold) -> takes user to contact.html CV form -->
+        <div style="text-align:center;margin-top:6px">
+          <a class="btn-request" href="contact.html#cv-form">Request CV</a>
+        </div>
+
+        <!-- small extra area left hidden on home page (experience removed here) -->
+        <div class="profile-extra" aria-hidden="true"></div>
+      </aside>
+
+      <!-- right: main content -->
+      <section class="card" role="main">
+        <div class="hero-centered">
+          <h1 style="margin:0 0 8px">Welcome — this is my profile.</h1>
+          <p class="lead" style="max-width:680px;margin:0 auto;color:var(--muted);">
+            I build practical tech tools, repair systems, and learn web &amp; AI. Browse About, Projects, or Contact to request my CV.
+          </p>
+          <div style="max-width:700px;margin:25px auto 0;color:#bcbcbc;line-height:1.6;font-size:16px;">
+  I specialize in solving practical problems — from hardware repair, system 
+  diagnostics, and network setups to building lightweight automations and 
+  experimenting with AI. I enjoy creating tools that make daily tasks faster, 
+  cleaner, and more efficient.
+
+  <br><br>
+
+  My work includes service-center utilities, custom scripts, personal websites, 
+  prompt-engineering experiments, and small automation pipelines using Python 
+  and JavaScript. I'm constantly improving my skills and learning new ways to 
+  build better systems.
+
+  <br><br>
+
+  Feel free to explore the About, Projects, or Contact page.  
+  You can also request my CV directly from the Contact section.
+</div>
+
+        </div>
+
+        <h3 style="margin-top:26px">Quick overview</h3>
+
+        <!-- simplified skill bars -->
+        <div class="skill-row"><span>Hardware repair</span>
+          <div class="bar"><div class="bar-inner" style="width:88%"></div></div>
+        </div>
+        <div class="skill-row"><span>HTML &amp; CSS</span>
+          <div class="bar"><div class="bar-inner" style="width:72%"></div></div>
+        </div>
+        <div class="skill-row"><span>JavaScript</span>
+          <div class="bar"><div class="bar-inner" style="width:65%"></div></div>
+        </div>
+
+        <!-- note: quick links were removed from the home page per your request -->
+      </section>
+
+    </div>
+  </main>
+
+  <!-- footer (keeps existing look) -->
+  <footer style="text-align:center;padding:18px 0;color:var(--muted)">
+    © <span id="year"></span> Krish Haldankar — Crafted with code
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
