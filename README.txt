@@ -1,0 +1,1 @@
+README: unpackage and follow instructions. Replace placeholders and upload to GitHub Pages or XAMPP htdocs.

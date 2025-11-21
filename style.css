@@ -1,0 +1,99 @@
+:root{
+  --bg:#000000;
+  --panel: rgba(20,24,28,0.85);
+  --card: rgba(255,255,255,0.03);
+  --accent:#c99745;
+  --muted:#9fb3c1;
+  --text:#e8f6ff;
+  --radius:12px;
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial;}
+a{color:inherit;text-decoration:none}
+header.site-header{
+  position:fixed;left:0;right:0;top:0;height:68px;z-index:40;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.25);backdrop-filter: blur(5px);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.header-inner{max-width:var(--max-width);width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:46px;height:46px;border-radius:10px;object-fit:cover}
+.brand-name{font-weight:800;color:var(--accent);letter-spacing:0.6px}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{padding:8px 12px;border-radius:8px;font-weight:700;color:rgba(255,255,255,0.86)}
+.nav a:hover{background:rgba(255,255,255,0.03);transform:translateY(-2px)}
+
+main.site{padding-top:86px;min-height:calc(100vh - 86px);z-index:10;position:relative}
+.container{max-width:var(--max-width);margin:0 auto;padding:28px;display:grid;grid-template-columns:320px 1fr;gap:26px}
+
+/* card */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.profile-card .logo-large{display:block;margin:10px auto 6px;width:84px;height:84px;border-radius:12px;object-fit:cover}
+h1,h2,h3{margin:6px 0 12px}
+h1{font-size:34px}
+.lead{color:var(--muted);margin-bottom:12px;max-width:70%}
+.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);margin-right:8px;margin-top:8px;font-weight:700}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer;border:none}
+.btn-orange{background:linear-gradient(90deg,var(--accent),#e8b97a);color:#051018}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  transition: 0.25s;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 204, 102, 0.3); /* gold-ish glow */
+  transform: translateY(-3px);
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+/* left column content */
+.profile-card p.sub{color:var(--muted)}
+.skills{margin-top:10px}
+.skills .skill{display:inline-block;padding:6px 10px;margin:6px 6px 0 0;background:rgba(255,255,255,0.02);border-radius:999px;color:var(--muted);font-weight:700}
+
+/* right column */
+.skill-row{display:flex;align-items:center;gap:16px;margin:12px 0}
+.skill-row span{width:160px;color:var(--muted);font-weight:700}
+.bar{flex:1;height:12px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+.bar-inner{height:100%;background:linear-gradient(90deg,var(--accent),#e4b776);}
+
+/* projects grid */
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:10px}
+.project-card{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+
+/* contact form */
+.form label{display:block;margin-top:8px;font-weight:700;color:var(--muted)}
+.form input,.form textarea{width:100%;padding:10px;border-radius:8px;margin-top:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+
+/* make canvas behind everything */
+#astro-wrap{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* responsive */
+@media (max-width:980px){
+  .container{grid-template-columns:1fr;padding:16px}
+  .lead{max-width:100%}
+  .project-grid{grid-template-columns:1fr}
+  .brand-name{display:none}
+}

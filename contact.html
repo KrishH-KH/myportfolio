@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Krish</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2B9BL8R06K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2B9BL8R06K');
+</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- keep your site-wide background script -->
+  <script src="astro.js"></script>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="index.html"><img class="brand-logo" src="assets/logo.png" alt="KH logo"></a>
+        <span class="brand-name">KRISH HALDANKAR</span>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site">
+    <div class="container">
+      
+      <!-- left profile/contact card -->
+      <aside class="card profile-card">
+        <img class="logo-large" src="assets/logo.png" alt="KH logo">
+        <h2>Contact</h2>
+
+        <!-- user text you asked to keep -->
+        <p class="sub">Want my CV? Request it here — I’ll reply manually to the email you provide.</p>
+
+        <div class="social-icons">
+  <a href="https://instagram.com/krish.h_9" target="_blank" rel="noopener" title="Instagram">
+    <img src="assets/insta.svg" alt="Instagram">
+  </a>
+
+  <a href="https://x.com/Apostrophe075" target="_blank" rel="noopener" title="X (Twitter)">
+    <img src="assets/x.svg" alt="X">
+  </a>
+
+  <a href="mailto:krishhaldankar3@gmail.com" title="Email">
+    <img src="assets/mail.svg" alt="Email">
+  </a>
+</div> 
+      </aside>
+
+      <!-- right form card -->
+      <section class="card">
+        <h1>Request CV / Message</h1>
+
+        <!-- NEW paragraph you asked for: explanation below the title -->
+        <p class="muted" style="max-width:760px; margin-top:6px;">
+          If you want my CV, submit your name and email below with a short message describing why
+          you’d like it (job, collaboration, freelance, etc.). I will reply personally to the
+          email you provide — I do not send the CV automatically.
+        </p>
+
+        <form action="https://formspree.io/f/xqanjkdr" method="POST" class="form" style="margin-top:18px;">
+  
+  <label>
+    Name
+    <input type="text" name="name" required placeholder="Your full name">
+  </label>
+
+  <label>
+    Email
+    <input type="email" name="email" required placeholder="you@example.com">
+  </label>
+
+  <label>
+    Message
+    <textarea name="message" rows="5" placeholder="Why you need the CV (optional)"></textarea>
+  </label>
+
+  <button class="btn btn-orange" type="submit">Send Request</button>
+
+</form>
+
+        <script>
+          function submitRequest(ev) {
+            ev.preventDefault();
+            const nm = document.getElementById('name').value.trim();
+            const em = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+
+            if (!nm || !em) {
+              status.textContent = 'Please provide your name and a valid email address.';
+              return false;
+            }
+
+            // polite status message — manual reply promised
+            status.textContent = 'Thanks — I received your request and will reply to ' + em + ' manually.';
+            // Optional: you can add a fetch() to POST this data to a server, Google Form, or Airtable
+            // fetch('/save-request', { method:'POST', body:JSON.stringify({name:nm,email:em,message:msg}) })
+
+            // reset form (optional)
+            // ev.target.reset();
+            return false;
+          }
+        </script>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
