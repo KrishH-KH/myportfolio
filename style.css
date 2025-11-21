@@ -96,4 +96,111 @@ h1{font-size:34px}
   .lead{max-width:100%}
   .project-grid{grid-template-columns:1fr}
   .brand-name{display:none}
+
+  /* =========================
+   Mobile tweaks (phones)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Make base text a bit smaller */
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  /* Header / navbar */
+  .site-header {
+    height: auto;
+  }
+
+  .header-inner {
+    padding: 10px 16px;
+    flex-direction: column;             /* stack brand and nav */
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 0.9rem;
+  }
+
+  .nav a {
+    padding: 2px 0;
+  }
+
+  /* Main layout: cards go in a single column */
+  .site {
+    padding-top: 90px;          /* make sure content starts under header */
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 0 16px 32px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Profile card centering */
+  .profile-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-card .badge-row,
+  .profile-card .tag-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Headings & big text a bit smaller */
+  h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .lead,
+  .muted {
+    font-size: 0.95rem;
+  }
+
+  /* Skills / bars section spacing */
+  .skills,
+  .hero-centered {
+    margin-top: 16px;
+  }
+
+  /* Contact form inputs full-width */
+  .form label input,
+  .form label textarea {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+  }
+}
+
 }
